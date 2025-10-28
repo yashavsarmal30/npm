@@ -1,25 +1,23 @@
 import React, { useState } from "react";
 
-// Child Component (uses Props)
-function Child(props) {
-  return <h3>Hello, {props.name}!</h3>;
+function Greeting(props) {
+  return <h2>Hello, {props.name}!</h2>;
 }
 
-// Parent Component (uses State)
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
-      <h2>React State and Props Example</h2>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>States & Props</h1>
 
-      {/* State Example */}
-      <p>Count: {count}</p>
+      <Greeting name="Yash" />
+      <Greeting name="Atharva" />
+
+      <h2>Counter: {count}</h2>
       <button onClick={() => setCount(count + 1)}>Increase</button>
-
-      {/* Props Example */}
-      <Child name="Bob" />
-      <Child name="Alice" />
+      <br />
+      <button onClick={() => setCount(count - 1)}>Decrease</button>
     </div>
   );
 }
