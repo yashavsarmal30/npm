@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Interest Calculator</title>
+  </head>
+  <body>
+    <h1>Simple Interest Calculator</h1>
+    <p>
+      Enter the principal amount, rate of interest, and number of years below:
+    </p>
+
+    <label for="principal">Principal Amount:</label>
+    <input type="number" id="principal" placeholder="Enter principal amount" />
+
+    <label for="rate">Rate of Interest (%):</label>
+    <input type="number" id="rate" placeholder="Enter rate of interest" />
+
+    <label for="years">Number of Years:</label>
+    <input type="number" id="years" placeholder="Enter years" />
+
+    <button onclick="showInterest()">Calculate Interest</button>
+
+    <div id="results"></div>
+
+    <script>
+      // Traditional function
+      function calculateSimpleInterest(principal, rate, years) {
+        return (principal * rate * years) / 100;
+      }
+
+      // Arrow function
+      const calculateSI = (principal, rate, years) =>
+        (principal * rate * years) / 100;
+
+      function showInterest() {
+        const principal = parseFloat(
+          document.getElementById("principal").value
+        );
+        const rate = parseFloat(document.getElementById("rate").value);
+        const years = parseFloat(document.getElementById("years").value);
+        const resultsDiv = document.getElementById("results");
+
+        const interest1 = calculateSimpleInterest(principal, rate, years);
+        const interest2 = calculateSI(principal, rate, years);
+
+        // Display results
+        resultsDiv.innerHTML = `
+        Simple Interest (Traditional Function): ${interest1.toFixed(2)} <br>
+        Simple Interest (Arrow Function): ${interest2.toFixed(2)}
+      `;
+      }
+    </script>
+  </body>
+</html>

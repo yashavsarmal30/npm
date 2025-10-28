@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cylinder Volume Calculator</title>
+  </head>
+  <body>
+    <h1>Volume Calculation</h1>
+    <p>Enter the radius and height of a cylinder to calculate its volume.</p>
+
+    <label for="radius">Radius:</label>
+    <input type="number" id="radius" placeholder="Enter radius" />
+    <br />
+    <label for="height">Height:</label>
+    <input type="number" id="height" placeholder="Enter height" />
+
+    <button onclick="calculateVolume()">Calculate Volume</button>
+
+    <div id="result"></div>
+
+    <script>
+      function calculateVolume() {
+        const pi = Math.PI;
+
+        const radius = parseFloat(document.getElementById("radius").value);
+        const height = parseFloat(document.getElementById("height").value);
+        // Calculate volume
+        const volume = pi * radius * radius * height;
+
+        // Display result
+        document.getElementById("result").textContent =
+          "Volume of the cylinder: " + volume.toFixed(2);
+      }
+    </script>
+  </body>
+</html>

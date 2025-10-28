@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Background Properties Demo</title>
+    <style>
+      .background-color {
+        background-color: #ffcccc;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .background-image {
+        background-image: url("https://placehold.co/350x150");
+        background-repeat: no-repeat; /* default is repeat */
+        background-position: center;
+        background-size: cover; /* cover, contain, auto */
+        padding: 60px 20px; /* space for visibility */
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .background-repeat {
+        background-image: url("https://placehold.co/100x100");
+        background-repeat: repeat-x; /* repeat, repeat-x, repeat-y, no-repeat */
+        padding: 60px 20px;
+        margin-bottom: 20px;
+      }
+
+      .background-attachment {
+        background-image: url("https://placehold.co/350x150");
+        background-attachment: fixed; /* scroll (default), fixed */
+        background-position: center;
+        background-size: cover;
+        padding: 60px 20px;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .background-clip {
+        background-color: gold;
+        background-clip: content-box; /* border-box, padding-box, content-box */
+        padding: 40px;
+        border: 10px solid black;
+        margin-bottom: 20px;
+      }
+
+      .background-origin {
+        background-image: radial-gradient(circle, red, yellow);
+        background-origin: padding-box; /* border-box, padding-box, content-box */
+        padding: 40px;
+        border: 10px solid black;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Background Properties</h1>
+
+    <div class="background-color">background-color: #ffcccc;</div>
+
+    <div class="background-image">
+      background-image: url('https://placehold.co/350x150');<br />
+      background-repeat: no-repeat;<br />
+      background-position: center;<br />
+      background-size: cover;
+    </div>
+
+    <div class="background-repeat">
+      background-image: url('https://placehold.co/100x100');<br />
+      background-repeat: repeat-x;
+    </div>
+
+    <div class="background-attachment">
+      background-attachment: fixed;<br />
+      Background stays fixed when scrolling.
+    </div>
+
+    <div class="background-clip">
+      background-clip: content-box;<br />
+      Background color is clipped to content only.
+    </div>
+
+    <div class="background-origin">
+      background-origin: padding-box;<br />
+      Background starts from padding area.
+    </div>
+  </body>
+</html>
