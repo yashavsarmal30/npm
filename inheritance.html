@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Class and Inheritance Example</title>
+    <script>
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        displayPerson() {
+          return `Name: ${this.name}, Age: ${this.age}`;
+        }
+      }
+      class Student extends Person {
+        constructor(name, age, course, marks) {
+          super(name, age); // Call parent constructor
+          this.course = course;
+          this.marks = marks;
+        }
+
+        displayStudent() {
+          return `${this.displayPerson()}, Course: ${this.course}, Marks: ${
+            this.marks
+          }`;
+        }
+      }
+
+      function showDetails() {
+        let s1 = new Student("Bob", 20, "IT", 90);
+        let s2 = new Student("Alice", 21, "Computer", 85);
+
+        document.getElementById("output").innerHTML =
+          s1.displayStudent() + "<br>" + s2.displayStudent();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Student Details</h1>
+    <button onclick="showDetails()">Show Students</button>
+    <p id="output"></p>
+  </body>
+</html>
